@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"gorm-example/scenario"
 
 	"github.com/jinzhu/gorm"
@@ -25,8 +26,13 @@ func main() {
 	defer db.Close()
 
 	// TODO: Create
+	fmt.Println("> Create")
+	if err := scenario.Create(db); err != nil {
+		panic(err)
+	}
 
 	// Read
+	fmt.Println("> Read")
 	if err := scenario.Read(db); err != nil {
 		panic(err)
 	}
