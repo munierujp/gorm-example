@@ -15,8 +15,7 @@ func Read(db *gorm.DB) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("id" + "\t" + "name" + "\t" + "language_id" + "\t" + "created_at" + "\t" + "updated_at" + "\t" + "deleted_at")
-	fmt.Printf("%v\t%v\t%v\t%v\t%v\t%v\n", user.ID, user.Name, user.LanguageID, user.CreatedAt, user.UpdatedAt, user.DeletedAt)
+	printRecord(user)
 
 	id := user.ID
 	fmt.Printf("> Find by id (%v)\n", id)
@@ -24,8 +23,7 @@ func Read(db *gorm.DB) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("id" + "\t" + "name" + "\t" + "language_id" + "\t" + "created_at" + "\t" + "updated_at" + "\t" + "deleted_at")
-	fmt.Printf("%v\t%v\t%v\t%v\t%v\t%v\n", user.ID, user.Name, user.LanguageID, user.CreatedAt, user.UpdatedAt, user.DeletedAt)
+	printRecord(user)
 
 	return nil
 }
