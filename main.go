@@ -37,7 +37,11 @@ func main() {
 		panic(err)
 	}
 
-	// TODO: Update
+	// Update
+	fmt.Println("> Update")
+	if err := scenario.Update(db); err != nil {
+		panic(err)
+	}
 
 	// Delete
 	fmt.Println("> Delete")
