@@ -19,6 +19,7 @@ func Create(db *gorm.DB) error {
 	if err := userRepo.Add(user); err != nil {
 		return err
 	}
+	printLastReocrd(userRepo)
 
 	return nil
 }
