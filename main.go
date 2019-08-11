@@ -1,6 +1,8 @@
 package main
 
 import (
+	"gorm-example/scenario"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -18,13 +20,16 @@ const (
 func main() {
 	db, err := gorm.Open("mysql", USER_NAME+":"+PASSWORD+"@tcp("+HOST+":"+PORT+")/"+DATABASE+"?charset="+CHARSET+"&collation="+COLLATION+"&parseTime=True&loc=Local")
 	if err != nil {
-		panic("failed to connect database")
+		panic(err)
 	}
 	defer db.Close()
 
 	// TODO: Create
 
-	// TODO: Read
+	// Read
+	if err := scenario.Read(db); err != nil {
+		panic(err)
+	}
 
 	// TODO: Update
 
