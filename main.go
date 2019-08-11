@@ -30,18 +30,21 @@ func main() {
 	if err := scenario.Create(db); err != nil {
 		panic(err)
 	}
+	fmt.Println()
 
 	// Read
 	fmt.Println("> Read")
 	if err := scenario.Read(db); err != nil {
 		panic(err)
 	}
+	fmt.Println()
 
 	// Update
 	fmt.Println("> Update")
 	if err := scenario.Update(db); err != nil {
 		panic(err)
 	}
+	fmt.Println()
 
 	// Delete
 	fmt.Println("> Delete")
