@@ -29,3 +29,11 @@ func (repo *UserRepository) FindByID(id uint) (*model.User, error) {
 	}
 	return &user, nil
 }
+
+func (repo *UserRepository) Last() (*model.User, error) {
+	var user model.User
+	if err := repo.db.Last(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
