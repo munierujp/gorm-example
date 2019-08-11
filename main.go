@@ -20,7 +20,7 @@ const (
 func main() {
 	db, err := gorm.Open("mysql", USER_NAME+":"+PASSWORD+"@tcp("+HOST+":"+PORT+")/"+DATABASE+"?charset="+CHARSET+"&collation="+COLLATION+"&parseTime=True&loc=Local")
 	if err != nil {
-		panic("failed to connect database")
+		panic(err)
 	}
 	defer db.Close()
 
