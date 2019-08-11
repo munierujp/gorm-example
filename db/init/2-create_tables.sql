@@ -15,10 +15,10 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` INT unsigned NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
-  `language` INT unsigned NOT NULL,
+  `language_id` INT unsigned NOT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` DATETIME,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (language) REFERENCES languages(id)
+  FOREIGN KEY (language_id) REFERENCES languages(id)
 ) ENGINE = InnoDB;
