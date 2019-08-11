@@ -37,3 +37,12 @@ func (repo *UserRepository) Last() (*model.User, error) {
 	}
 	return &user, nil
 }
+
+func (repo *UserRepository) Delete(id uint) error {
+	user := model.User{}
+	user.ID = id
+	if err := repo.db.Delete(&user).Error; err != nil {
+		return err
+	}
+	return nil
+}

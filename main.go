@@ -39,5 +39,9 @@ func main() {
 
 	// TODO: Update
 
-	// TODO: Dalete
+	// Delete
+	fmt.Println("> Delete")
+	if err := scenario.Delete(db); err != nil {
+		panic(err)
+	}
 }
