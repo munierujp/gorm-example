@@ -8,7 +8,7 @@ import (
 const (
 	USER_NAME = "user"
 	PASSWORD  = "pass"
-	DATABASE  = "gorm-example"
+	DATABASE  = "sample"
 	HOST      = "localhost"
 	PORT      = "3306"
 )
