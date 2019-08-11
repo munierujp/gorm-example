@@ -2,8 +2,8 @@ package scenario
 
 import (
 	"fmt"
-	"gorm-example/interface/database"
 	"gorm-example/domain/repository"
+	"gorm-example/interface/database"
 
 	"github.com/jinzhu/gorm"
 )
@@ -11,11 +11,7 @@ import (
 func Read(db *gorm.DB) error {
 	userRepo := database.NewUserRepository(db)
 
-	if err := findByID(userRepo, 1); err != nil {
-		return err
-	}
-
-	if err := findByID(userRepo, 3); err != nil {
+	if err := findByID(userRepo, 4); err != nil {
 		return err
 	}
 
