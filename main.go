@@ -25,6 +25,7 @@ func main() {
 	}
 	defer db.Close()
 
+	// Create
 	fmt.Println("> Create")
 	if err := scenario.Create(db); err != nil {
 		panic(err)
