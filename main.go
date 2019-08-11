@@ -11,10 +11,12 @@ const (
 	DATABASE  = "sample"
 	HOST      = "localhost"
 	PORT      = "3306"
+	CHARSET   = "utf8mb4"
+	COLLATION = "utf8mb4_bin"
 )
 
 func main() {
-	db, err := gorm.Open("mysql", USER_NAME+":"+PASSWORD+"@tcp("+HOST+":"+PORT+")/"+DATABASE+"?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", USER_NAME+":"+PASSWORD+"@tcp("+HOST+":"+PORT+")/"+DATABASE+"?charset="+CHARSET+"&collation="+COLLATION+"&parseTime=True&loc=Local")
 	if err != nil {
 		panic("failed to connect database")
 	}
