@@ -1,6 +1,8 @@
 package main
 
 import (
+	"gorm-example/scenario"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -24,7 +26,10 @@ func main() {
 
 	// TODO: Create
 
-	// TODO: Read
+	// Read
+	if err := scenario.Read(db); err != nil {
+		panic(err)
+	}
 
 	// TODO: Update
 
